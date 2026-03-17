@@ -1,6 +1,6 @@
 public abstract class Animal implements Seasonable,Comparable{
     protected int weight;
-    private Season season;
+    protected Season season;
     protected Color color;
     // TODO: Add auxiliary fields and functions.
 
@@ -32,7 +32,7 @@ public abstract class Animal implements Seasonable,Comparable{
     }
 
 
-    @Override
+   // @Override
     public void changeSeason() {
         switch (season) {
             case WINTER:
@@ -51,8 +51,8 @@ public abstract class Animal implements Seasonable,Comparable{
     }
 
 
-    @Override
-    public int compareTo(Object o) {
+   // @Override
+    public int compareTo(Animal o) {
         return Integer.compare(this.weight, o.weight);
     }
 

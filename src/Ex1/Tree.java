@@ -14,8 +14,8 @@ public abstract class Tree implements Comparable, Seasonable {
         return height;
     }
 
-    public Color getColor() {
-        return color;
+    public Color getleavesColor() {
+        return leavesColor;
     }
 
     @Override
@@ -27,13 +27,13 @@ public abstract class Tree implements Comparable, Seasonable {
         this.height = (int) Math.round(height);
     }
 
-    public void setLeavesColor(LeavesColor leavesColor) {
+    public void setLeavesColor(Color leavesColor) {
         this.leavesColor = leavesColor;
     }
 
 
 
-    @Override
+   // @Override
     public void changeSeason() {
         switch (season) {
             case WINTER:
@@ -52,14 +52,14 @@ public abstract class Tree implements Comparable, Seasonable {
     }
 
 
-    @Override
-    public int compareTo(Object o) {
-        return Integer.compare(this.height, o.height);
+  //  @Override
+    public int compareTo(Tree o) {
+        return Integer.compare(this.height, o.getHeight());
     }
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "Tree{" +
                 "weight=" + height +
                 ", leavesColor=" + leavesColor +
                 ", currentSeason=" + season +
