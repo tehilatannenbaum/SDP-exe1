@@ -7,9 +7,10 @@ public class Bear extends Animal {
 
     @Override
     public String toString() {
-        return "Bear. My weight is: "
-                + weight +
-                " and my color is: BROWN";
+        if (season == Season.WINTER) {
+            return "Bear. I am sleeping. My weight is: " + weight + " and my color is: BROWN";
+        }
+        return "Bear. My weight is: " + weight + " and my color is: BROWN";
     }
 
 
@@ -35,6 +36,6 @@ public class Bear extends Animal {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        return super.compareTo((Animal) o);
     }
 }

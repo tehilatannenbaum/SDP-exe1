@@ -40,6 +40,6 @@ public class FigTree extends Tree {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        return super.compareTo((Tree) o);
     }
 }

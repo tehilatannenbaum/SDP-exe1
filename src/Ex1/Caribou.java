@@ -40,7 +40,7 @@ public class Caribou extends Animal {
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        return super.compareTo((Animal) o);
     }
 }
 
