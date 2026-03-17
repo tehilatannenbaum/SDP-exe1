@@ -18,6 +18,11 @@ public abstract class Animal implements Seasonable,Comparable{
         return color;
     }
 
+    @Override
+    public Season getCurrentSeason() {
+        return season;
+    }
+
     public void setWeight(double weight) {
         this.weight = (int) Math.round(weight);
     }
@@ -26,27 +31,29 @@ public abstract class Animal implements Seasonable,Comparable{
         this.color = color;
     }
 
-    @Override
-    public Season getCurrentSeason() {
-        return season;
-    }
 
     @Override
-    public Season changeSeason(){
-        if(season == WINTER)
-            season = SPRING;
-        if(season == SPRING)
-            season = SUMMER;
-        if(season == SUMMER)
-            season = FALL;
-        if(season == FALL)
-            season = WINTER;
+    public void changeSeason() {
+        switch (season) {
+            case WINTER:
+                season = Season.SPRING;
+                break;
+            case SPRING:
+                season = Season.SUMMER;
+                break;
+            case SUMMER:
+                season = Season.FALL;
+                break;
+            case FALL:
+                season = Season.WINTER;
+                break;
+        }
     }
 
 
     @Override
     public int compareTo(Object o) {
-        return Integer.compare(this.weight, other.weight);
+        return Integer.compare(this.weight, o.weight);
     }
 
     @Override
@@ -54,7 +61,7 @@ public abstract class Animal implements Seasonable,Comparable{
         return "Animal{" +
                 "weight=" + weight +
                 ", color=" + color +
-                ", currentSeason=" + currentSeason +
+                ", currentSeason=" + season +
                 '}';
     }
 
