@@ -49,5 +49,13 @@ public abstract class Animal implements Seasonable,Comparable{
         return Integer.compare(this.weight, other.weight);
     }
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "weight=" + weight +
+                ", color=" + color +
+                ", currentSeason=" + currentSeason +
+                '}';
+    }
 
 }
